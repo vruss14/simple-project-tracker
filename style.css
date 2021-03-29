@@ -46,7 +46,8 @@ header {
     color: white;
     margin-right: 0;
     margin-left: 10rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
 }
 
 .custom-col {
@@ -96,6 +97,7 @@ header {
         margin-left: auto;
         margin-right: auto;
         margin-top: 3rem;
+        margin-bottom: 1rem;
     }
 
     #column-values {

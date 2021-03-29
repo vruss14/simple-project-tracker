@@ -19,7 +19,6 @@ let table = document.getElementById("column-values")
 let addBtn = document.getElementById("add-proj");
 let form = document.getElementById("form-projects");
 
-
 addBtn.addEventListener("click", addProject)
 
 function addProject (event) {
@@ -31,14 +30,31 @@ function addProject (event) {
   let rate = document.getElementById("rate-value").value.trim();
   let dueDate = document.getElementById("due-date").value.trim();
 
+  let nameLabel = document.getElementById("name-label");
+  let typeLabel = document.getElementById("type-label");
+  let dateLabel = document.getElementById("date-label");
 
-  console.log("Listening :)");
-  console.log(projName);
-  console.log(projType);
-  console.log(rate);
-  console.log(dueDate);
+  if (projName === "") {
+    nameLabel.setAttribute("style", "font-weight: bold; color:red;");
+    nameLabel.textContent = "Please select a name for your project.";
+    return;
+  }
+
+  if (projType === "Select an option:") {
+    typeLabel.setAttribute("style", "font-weight: bold; color:red;");
+    typeLabel.textContent = "Please select a type for your project.";
+    return;
+  }
+
+  if (dueDate === "") {
+    dateLabel.setAttribute("style", "font-weight: bold; color: red;");
+    dateLabel.textContent = "Please select a due date for your project.";
+    return;
+  }
 
   form.reset();
+
+  $('#project-modal').modal('hide');
 
   addNewRow(projName, projType, rate, dueDate);
 }
