@@ -19,13 +19,26 @@
         <h2 id = "current-time"></h2>
     </header>
 
-    <div id = "instructions" class="card" style="width: 25rem;">
-        <div class="card-body">
-          <h5 class="card-title">Instructions</h5>
-          <p class="card-text">Submit the requirements and specifications of your project so that it can display in the tracker.</p>
-            <button id = "modal-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#project-modal">New Project</button>
+    <div id = wrapper>
+
+      <div id = "instructions" class="card" style="width: 25rem;">
+          <div class="card-body">
+            <h5 class="card-title">Instructions</h5>
+            <p class="card-text">Submit the requirements and specifications of your project so that it can display in the tracker.</p>
+              <button id = "modal-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#project-modal">New Project</button>
+          </div>
         </div>
-      </div>
+
+        <div id = "column-values" class="container">
+          <div class="row row-cols-4">
+            <div class="col custom-col">Project Name</div>
+            <div class="col custom-col">Project Type</div>
+            <div class="col custom-col">Hourly Rate</div>
+            <div class="col custom-col">Due Date</div>
+          </div>
+        </div>
+
+    </div>
 
 
   <!-- Modal -->
@@ -39,20 +52,21 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form id = "form-projects">
             <div class="mb-3">
               <label for="project-name" class="form-label">Project Name:</label>
               <input type="text" class="form-control" id="proj-name" aria-describedby="project">
             </div>
             
             <select id = "types" class="form-select mb-3" aria-label="projects">
-              <option selected>Project Type:</option>
-              <option value="html-css">HTML/CSS</option>
-              <option value="html-css-javascript">HTML/CSS/JavaScript</option>
-              <option value="node">Node.js</option>
-              <option value="front-end">Front-end Technologies (other)</option>
-              <option value="back-end">Back-end Technologies (other)</option>
-              <option value="full-stack">Full-stack</option>
+              <option selected disabled>Project Type:</option>
+              <option value="HTML">HTML</option>
+              <option value="CSS">CSS</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Front-end (other)">Front-end (other)</option>
+              <option value="Node.js">Node.js</option>
+              <option value="Back-end (other)">Back-end (other)</option>
+              <option value="Full-stack">Full-stack</option>
             </select><br>
 
             <label for="rates" class="form-label">Hourly Rate (USD):</label><br>
@@ -69,20 +83,13 @@
         </div>
         <div class="modal-footer dkcyan">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id = "add-proj">Add Project</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id = "add-proj">Add Project</button>
         </div>
       </div>
     </div>
   </div>
 
-<div id = "column-values" class="container">
-  <div class="row row-cols-4">
-    <div class="col custom-col">Project Name</div>
-    <div class="col custom-col">Project Type</div>
-    <div class="col custom-col">Hourly Rate</div>
-    <div class="col custom-col">Due Date</div>
-  </div>
-</div>
+
 
 <!-- Bootstrap JavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
