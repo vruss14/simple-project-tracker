@@ -1,10 +1,17 @@
+// Retrieves and formats the current date
 let today = moment().format("MMM Do, YYYY");
 $("#current-date").text(today);
 
-let time = moment().format("LTS");
-$("#current-time").text(time);
+// Ascending time updates every second
 
-$('#exampleModalCenter').on('shown.bs.modal', function () {
+let updatedTime = function () {
+  $("#current-time").text(moment().format('h:mm:ss a'));
+}
+setInterval(updatedTime, 1000);
+
+// Modal functionality (includes datepicker from jQuery UI library)
+
+$('#project-modal').on('shown.bs.modal', function () {
     $('#modal-btn').trigger('focus')
   })
 
@@ -20,6 +27,10 @@ let addBtn = document.getElementById("add-proj");
 let form = document.getElementById("form-projects");
 
 addBtn.addEventListener("click", addProject)
+
+// Adds projects to the table; includes error handling
+
+let projectTbody = document.getElementById("project-tbody")
 
 function addProject (event) {
 
@@ -60,27 +71,27 @@ function addProject (event) {
 }
 
 function addNewRow(projName, projType, rate, dueDate) {
-  let row = document.createElement("div");
-  table.appendChild(row);
-  row.setAttribute("class", "row row-cols-4");
+  let tableRow = document.createElement("tr");
+  projectTbody.appendChild(tableRow);
 
-  let nameOfProj = document.createElement("div");
-  row.appendChild(nameOfProj);
-  nameOfProj.setAttribute("class", "col custom-col adjust-col");
-  nameOfProj.textContent = projName;
+  let td1 = document.createElement("td");
+  tableRow.appendChild(td1);
+  td1.textContent = projName;
 
-  let typeOfProj = document.createElement("div");
-  row.appendChild(typeOfProj);
-  typeOfProj.setAttribute("class", "col custom-col adjust-col");
-  typeOfProj.textContent = projType;
+  let td2 = document.createElement("td");
+  tableRow.appendChild(td2);
+  td2.textContent = projType;
 
-  let rateOfProj = document.createElement("div");
-  row.appendChild(rateOfProj);
-  rateOfProj.setAttribute("class", "col custom-col adjust-col");
-  rateOfProj.textContent = `$ ${rate}`;
+  let td3 = document.createElement("td");
+  tableRow.appendChild(td3);
+  td3.textContent = `$${rate}`;
 
-  let dateOfProj = document.createElement("div");
-  row.appendChild(dateOfProj);
-  dateOfProj.setAttribute("class", "col custom-col adjust-col");
-  dateOfProj.textContent = dueDate;
+  let td4 = document.createElement("td");
+  tableRow.appendChild(td4);
+  td4.textContent = dueDate;
+
+  let deleteBtn = document.createElement("button");
+  tableRow.appendChild(deleteBtn);
+  deleteBtn.textContent = "X";
+  deleteBtn.setAttribute("style", "background-color: maroon; color: white; padding-top: 0.55rem; padding-bottom: 0.55rem; padding-left: 1.5rem; padding-right: 1.5rem;")
 }

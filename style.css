@@ -1,117 +1,95 @@
 header {
-    text-align: center;
-    padding: 3%;
-    background-color: darkcyan;
-    color: white;
+  text-align: center;
+  padding: 3%;
+  background-color: darkcyan;
+  color: white;
 }
 
 #types {
-    width: 100%;
-    height: 2.5rem;
-    margin-top: 1rem;
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 1rem;
 }
 
 #hourly-rate {
-    width: 100%;
-    margin-bottom: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 #rate-value {
-    margin-left: 46.25%;
+  margin-left: 46.25%;
 }
 
-#rate-value::before{
-    content: "$";
+#rate-value::before {
+  content: "$";
 }
 
 .dkcyan {
-    background-color: darkcyan;
-    color: white;
+  background-color: darkcyan;
+  color: white;
 }
 
 #instructions {
-    text-align: center;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    border: 3px solid gray;
-    box-shadow: 5px 5px 5px darkgray;
-}
-
-#instructions, #column-values {
-    float: left;
-}
-
-#column-values {
-    background-color: darkcyan;
-    color: white;
-    margin-right: 0;
-    margin-left: 10rem;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
-}
-
-.custom-col {
-    border: 2px solid black;
-    font-size: 28px;
-    height: 3rem;
-    font-weight: bold;
-    text-align: center;
-    align-items: center;
-    overflow: hidden;
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  border: 3px solid gray;
+  box-shadow: 5px 5px 5px darkgray;
 }
 
 #modal-btn {
-    background-color: darkcyan;
+  background-color: darkcyan;
+  font-size: 24px;
 }
 
 #modal-btn:hover {
-    background-color: lightcyan;
-    color: black;
+  background-color: lightcyan;
+  color: black;
 }
 
 #add-proj {
-    background-color: black;
+  background-color: black;
 }
 
 #add-proj:hover {
-    background-color: lightcyan;
-    color: black;
+  background-color: lightcyan;
+  color: black;
 }
 
 .adjust-col {
-    background-color: rgb(6, 187, 187);
-    font-size: 20px;
-    padding-top: 7px;
+  background-color: rgb(6, 187, 187);
+  font-size: 20px;
+  padding-top: 7px;
 }
 
-@media screen and (max-width: 1732px) {
-    #wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    #instructions {
-        width: 100%;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 3rem;
-        margin-bottom: 1rem;
-    }
-
-    #column-values {
-        margin-left: auto;
-        margin-right: auto;
-    }
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@media screen and (max-width: 992px) {
-    .custom-col {
-        font-size: 14px;
-    }
+#instructions-title {
+  font-size: 36px;
+  text-decoration: underline;
+}
 
-    .adjust-col {
-        padding-top: 0;
-    }
+#instructions {
+  width: 75%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  font-size: 28px;
+}
+
+#column-values {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#projects-table {
+  margin-bottom: 3rem;
+  font-size: 24px;
 }

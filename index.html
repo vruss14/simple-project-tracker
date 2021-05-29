@@ -15,28 +15,44 @@
 
     <header>
         <h1>Welcome!</h1>
-        <h2 id = "current-date">It is now: </h2>
+        <h2 id = "current-date"></h2>
         <h2 id = "current-time"></h2>
     </header>
 
     <div id = wrapper>
 
-      <div id = "instructions" class="card" style="width: 25rem;">
+      <div id = "instructions" class="card">
           <div class="card-body">
-            <h5 class="card-title">Instructions</h5>
-            <p class="card-text">Submit the requirements and specifications of your project so that it can display in the tracker.</p>
+            <h5 class="card-title" id = "instructions-title">Instructions</h5>
+            <p class="card-text">Submit the requirements and specifications of your project so that it 
+              can display in the tracker.</p>
               <button id = "modal-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#project-modal">New Project</button>
           </div>
         </div>
 
-        <div id = "column-values" class="container">
-          <div class="row row-cols-4">
+        <!-- <div id = "column-values" class="container">
+          <div class="row row-cols-5">
             <div class="col custom-col">Project Name</div>
             <div class="col custom-col">Project Type</div>
             <div class="col custom-col">Hourly Rate</div>
             <div class="col custom-col">Due Date</div>
+            <div class="col custom-col">Delete</div>
           </div>
-        </div>
+        </div> -->
+
+        <table id = "projects-table" class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th scope="col">Project Name</th>
+              <th scope="col">Project Type</th>
+              <th scope="col">Hourly Rate</th>
+              <th scope="col">Due Date</th>
+              <th scope="col">Delete?</th>
+            </tr>
+          </thead>
+          <tbody id = "project-tbody">
+          </tbody>
+        </table>
 
     </div>
 
