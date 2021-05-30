@@ -22,7 +22,7 @@ $(function () {
   });
 });
 
-let table = document.getElementById("column-values")
+// let table = document.getElementById("column-values")
 let addBtn = document.getElementById("add-proj");
 let form = document.getElementById("form-projects");
 
@@ -30,7 +30,7 @@ addBtn.addEventListener("click", addProject)
 
 // Adds projects to the table; includes error handling
 
-let projectTbody = document.getElementById("project-tbody")
+let projectTbody = $('#project-tbody');
 
 function addProject (event) {
 
@@ -72,7 +72,7 @@ function addProject (event) {
 
 function addNewRow(projName, projType, rate, dueDate) {
   let tableRow = document.createElement("tr");
-  projectTbody.appendChild(tableRow);
+  projectTbody.append(tableRow);
 
   let td1 = document.createElement("td");
   tableRow.appendChild(td1);
@@ -93,5 +93,15 @@ function addNewRow(projName, projType, rate, dueDate) {
   let deleteBtn = document.createElement("button");
   tableRow.appendChild(deleteBtn);
   deleteBtn.textContent = "X";
-  deleteBtn.setAttribute("style", "background-color: maroon; color: white; padding-top: 0.55rem; padding-bottom: 0.55rem; padding-left: 1.5rem; padding-right: 1.5rem;")
+  deleteBtn.setAttribute("class", "delete-project-btn")
 }
+
+// Deletes a project based on which row the clicked delete button is in
+
+function deleteProject(event) {
+  console.log(event.target);
+  let btnClicked = $(event.target);
+  btnClicked.parent('tr').remove();
+}
+
+projectTbody.on('click', '.delete-project-btn', deleteProject);

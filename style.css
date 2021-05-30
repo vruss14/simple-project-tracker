@@ -93,3 +93,17 @@ header {
   margin-bottom: 3rem;
   font-size: 24px;
 }
+
+.delete-project-btn {
+    background-color: lightcoral; 
+    color: white; 
+    padding-top: 0.55rem; 
+    padding-bottom: 0.55rem; 
+    padding-left: 2rem; 
+    padding-right: 2rem;
+}
+
+.delete-project-btn:hover {
+    background-color: maroon;
+    transition: 0.5s ease-in-out;
+}
