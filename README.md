@@ -33,7 +33,7 @@ A couple ideas for future development include:
             
 ## Installation
 
-The application can be viewed live here:
+The application can be viewed live here: https://vruss14.github.io/simple-project-tracker/
 
 No installation steps are necessary.
 
